@@ -24,17 +24,28 @@ Ce projet Python vous permet de **réserver automatiquement des billets** dès q
 
 ### 📆 Installation des dépendances
 
+creer un envrionnement et installer les depandances avec :
+```
 pip install -r requirements.txt
-
+```
 
 ## ⚙️ Lancement du bot
 
 1. Placez chromedriver.exe dans le dossier racine du projet.
-   
-2. Lancez le script :
-   main.py
 
-3. Renseignez les informations demandées :
+2. Ouvrir un terminal dans le dossier du projet (mieux hors vscode)
+
+3. Activer l'environnement avec :
+   ```
+   .\nom_env\Scripts\Activate
+   ```
+   
+4. Lancez le script :
+   ```
+   python main.py
+   ```
+
+6. Renseignez les informations demandées dans le terminal:
    - Pseudo de connexion
    - Mot de passe
    - Noms des bénéficiaires
