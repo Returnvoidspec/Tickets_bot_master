@@ -1,12 +1,12 @@
-# 🎟️ TicketPurchaseBot – Bot d'achat de billets CSE Aubay
+# 🎟️ TicketPurchaseBot – Bot d'achat de billets
 
-Ce projet Python vous permet de **réserver automatiquement des billets** dès qu'ils deviennent disponibles sur la plateforme du CSE Aubay. Il est conçu pour détecter, remplir et valider le formulaire de réservation en un temps record.
+Ce projet Python vous permet de **réserver automatiquement des billets** dès qu'ils deviennent disponibles. Il est conçu pour détecter, remplir et valider le formulaire de réservation en un temps record.
 
 ---
 
 ## 🚀 Fonctionnalités
 
-- Connexion automatique à votre compte CSE Aubay
+- Connexion automatique à votre compte
 - Détection du bouton `Je commande` dès son apparition
 - Remplissage automatique des noms pour les billets
 - Ajout de billets subventionnés (quantité paramétrable)
