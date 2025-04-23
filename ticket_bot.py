@@ -32,7 +32,7 @@ class TicketPurchaseBot:
 
         # Chrome options (headless mode disabled for debugging)
         options = Options()
-        options.headless = True
+        options.headless = False
         prefs = {"profile.managed_default_content_settings.images": 2}
         options.add_experimental_option("prefs", prefs)
         self.driver = webdriver.Chrome(service=Service(executable_path="chromedriver.exe"), options=options)
@@ -99,7 +99,7 @@ class TicketPurchaseBot:
 
     def click_valider_question(self):
         try:
-            btn = self.driver.find_element(By.ID, "b_confirm_x")
+            btn = self.driver.find_element(By.NAME, "b_valider_x")
             self.driver.execute_script("arguments[0].click();", btn)
             self.log("Validation intermédiaire confirmée")
         except NoSuchElementException:
@@ -112,10 +112,26 @@ class TicketPurchaseBot:
             self.log("Validation finale envoyée")
         except NoSuchElementException:
             self.log("Bouton \"valider l'opération\" introuvable")
+    
+    def click_valider_paiement(self):
+        try:
+            btn = self.driver.find_element(By.NAME, "b_valider")
+            self.driver.execute_script("arguments[0].click();", btn)
+            self.log("Validation de paiement finale envoyée")
+        except NoSuchElementException:
+            self.log("Bouton \"valider l'opération de paiement\" introuvable")
+    
+    def click_aller_paiement(self):
+        try:
+            btn = self.driver.find_element(By.NAME, "b_continuer_recapitulatif")
+            self.driver.execute_script("arguments[0].click();", btn)
+            self.log("Validation de paiement finale envoyée")
+        except NoSuchElementException:
+            self.log("Bouton \"valider l'opération de paiement\" introuvable")
 
     def quit(self):
         self.log("Fermeture du navigateur dans 10 secondes")
-        self.wait(10)
+        self.wait(500)
         self.driver.quit()
 
     def run(self):
@@ -126,6 +142,8 @@ class TicketPurchaseBot:
         self.add_billets_subventionnes()
         self.click_valider_question()
         self.click_valider_operation()
+        self.click_valider_paiement()
+        self.click_aller_paiement()
         self.quit()
 
 
