@@ -14,11 +14,11 @@ def main():
     nom2 = input("Prénom + nom personne 2 : ").strip()
 
     bot = TicketPurchaseBot(
-        email="mjarnier",
-        password='Zomarodejo1?',
-        names=("Martin Jarnier", "Jocelyn Jarnier"),
+        email=pseudo_aubay,
+        password=password,
+        names=(nom1, nom2),
         billets=2,
-        bloc_index=3
+        bloc_index=1
     )
     bot.run()
 
