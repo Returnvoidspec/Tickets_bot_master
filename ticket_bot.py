@@ -130,8 +130,8 @@ class TicketPurchaseBot:
             self.log("Bouton \"valider l'opération de paiement\" introuvable")
 
     def quit(self):
-        self.log("Fermeture du navigateur dans 10 secondes")
-        self.wait(500)
+        self.log("Fermeture du navigateur dans 5000 secondes")
+        self.wait(5000)
         self.driver.quit()
 
     def run(self):
